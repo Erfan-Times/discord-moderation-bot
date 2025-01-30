@@ -45,7 +45,7 @@ A feature-rich Discord moderation bot with comprehensive logging capabilities.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/discord-moderation-bot.git
+git clone https://github.com/kozydot/discord-moderation-bot.git
 cd discord-moderation-bot
 ```
 
