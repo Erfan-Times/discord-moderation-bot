@@ -7,6 +7,7 @@ from pathlib import Path
 from utils.logger import bot_logger
 import platform
 from datetime import datetime
+from keep_alive import keep_alive
 
 # Load environment variables
 load_dotenv()
@@ -53,6 +54,7 @@ class ModBot(commands.Bot):
                 operation="sync_commands",
                 error=e
             )
+        await self.tree.sync(guild=discord.Object(id=897208006863892490))
             
     async def load_cogs(self):
         """Load all cogs from the cogs directory."""
@@ -86,7 +88,7 @@ class ModBot(commands.Bot):
 
         await self.change_presence(activity=discord.Activity(
             type=discord.ActivityType.watching,
-            name='the server'
+            name='Times Family'
         ))
         
         # Set up logging channel
@@ -176,6 +178,7 @@ class ModBot(commands.Bot):
 
 async def main():
     """Main function to start the bot."""
+    keep_alive()
     async with ModBot() as bot:
         await bot.start(TOKEN)
 
